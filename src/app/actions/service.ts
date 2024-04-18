@@ -1,6 +1,6 @@
 import { LogFileListType, LogFileLoaded } from "@/lib";
 
-//TODO: move to an env var to get it read to prod
+//TODO: move to an env var to get it ready to production
 const API_BASE_URL = `http://localhost:3000`;
 
 export async function listLogFiles(): Promise<{ data: LogFileListType[] }> {

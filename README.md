@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**** This is a [Next.js](https://nextjs.org/) project ****
+
+```
+DISCLAIMER: THIS APP IS NOT READY FOR PRODUCTION
+```
 
 # Welcome to Vision Log Lens
 Vision Log lens helps you to quickly access insightful information about `.log` files
@@ -89,5 +93,5 @@ Alternatively, you can also use this example `.log` to upload using the app.
 - [  ] Extract a few hardcoded information to `.env` variables
 - [  ] Finish some unit tests in different parts of the app
 - [  ] Develop e2e tests using playwright or other alternatives
-- [  ] Congfigure the production deployment to use a CI/CD pipeline
+- [  ] Congfigure the production build and deployment to use a CI/CD pipeline
 
