@@ -1,11 +1,13 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import React from "react";
+import { FormEvent } from "react";
 import { FileUpload } from "@/app/ui";
 import { navigate } from "@/app/actions";
 
+
 export default function Page() {
-  const [error, setError] = useState<string | boolean>(false);
+  const [error, setError] = React.useState<string | boolean>(false);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -43,7 +45,7 @@ export default function Page() {
 
   if (error) {
     return (
-      <div className="h-full flex flex-col items-center justify-center p-10">
+      <div data-testid="error-area" className="h-full flex flex-col items-center justify-center p-10">
         <div className="h-full flex flex-col items-center justify-center p-10">
           <h5 className="text-md leading-none text-gray-900 dark:text-white mb-5 pb-2">
             {error}
