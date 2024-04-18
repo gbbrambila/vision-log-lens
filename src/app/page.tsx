@@ -61,7 +61,7 @@ export default function Page() {
 
   return (
     <div className="h-full flex flex-col items-center justify-center p-10">
-      <div className="w-4/5">
+      <div className="w-4/5" data-testid="upload-area">
         <FileUpload handleSubmit={onSubmit} />
       </div>
     </div>
