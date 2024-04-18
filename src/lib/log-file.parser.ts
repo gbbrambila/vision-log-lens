@@ -2,10 +2,21 @@ import { LogFileContent } from "@/lib";
 import UAParser from "ua-parser-js";
 
 const parseLogFileContent = (fileContent: string[]) => {
-  return fileContent.map((line) => parseLogFileLine(line));
+  return fileContent.reduce((acc: LogFileContent[], current) => {
+    const parsedLine = parseLogFileLine(current);
+
+    if (parsedLine) {
+      acc = [...acc, parsedLine];
+    }
+    return acc;
+  }, []);
 };
 
-const parseLogFileLine = (line: string): LogFileContent => {
+const parseLogFileLine = (line: string): LogFileContent | null => {
+  if (!line) {
+    return null;
+  }
+
   let [
     ip,
     userIdentifier,
@@ -20,6 +31,10 @@ const parseLogFileLine = (line: string): LogFileContent => {
     referer,
     ...rawUserAgent
   ] = line.split(" ");
+
+  if (!ts || !tz) {
+    return null;
+  }
 
   const time = `${ts.substring(1)} ${tz.substring(0, tz.length - 1)}`;
 
